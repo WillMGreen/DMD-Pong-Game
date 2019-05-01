@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07A35BB0227060F000CBB075 /* CustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A35BAF227060F000CBB075 /* CustomAnnotation.swift */; };
+		2745ACC22279A5A0000E2D2D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2745ACC12279A5A0000E2D2D /* GameScene.sks */; };
 		27462DFE225383460028082E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27462DFD225383460028082E /* AppDelegate.swift */; };
-		27462E00225383460028082E /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 27462DFF225383460028082E /* GameScene.sks */; };
 		27462E02225383460028082E /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 27462E01225383460028082E /* Actions.sks */; };
 		27462E04225383460028082E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27462E03225383460028082E /* GameScene.swift */; };
 		27462E06225383460028082E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27462E05225383460028082E /* GameViewController.swift */; };
@@ -22,9 +22,9 @@
 		07A35BAC22705CAB00CBB075 /* gpx.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = gpx.gpx; sourceTree = "<group>"; };
 		07A35BAE2270607100CBB075 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		07A35BAF227060F000CBB075 /* CustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotation.swift; sourceTree = "<group>"; };
+		2745ACC12279A5A0000E2D2D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		27462DFA225383460028082E /* Pong Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pong Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27462DFD225383460028082E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		27462DFF225383460028082E /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		27462E01225383460028082E /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		27462E03225383460028082E /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		27462E05225383460028082E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -64,8 +64,8 @@
 		27462DFC225383460028082E /* Pong Game */ = {
 			isa = PBXGroup;
 			children = (
+				2745ACC12279A5A0000E2D2D /* GameScene.sks */,
 				27462DFD225383460028082E /* AppDelegate.swift */,
-				27462DFF225383460028082E /* GameScene.sks */,
 				27462E01225383460028082E /* Actions.sks */,
 				27462E03225383460028082E /* GameScene.swift */,
 				07A35BAF227060F000CBB075 /* CustomAnnotation.swift */,
@@ -138,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27462E09225383460028082E /* Main.storyboard in Resources */,
-				27462E00225383460028082E /* GameScene.sks in Resources */,
+				2745ACC22279A5A0000E2D2D /* GameScene.sks in Resources */,
 				27462E0B225383460028082E /* Assets.xcassets in Resources */,
 				27462E0E225383460028082E /* LaunchScreen.storyboard in Resources */,
 				27462E02225383460028082E /* Actions.sks in Resources */,

@@ -11,7 +11,6 @@ class GameScene: SKScene {
     var topLabel: SKLabelNode!
     var bottomLabel: SKLabelNode!
     
-    
     var score = [Int]()
     
     
@@ -48,10 +47,15 @@ class GameScene: SKScene {
         main.physicsBody?.isDynamic = false
         addChild(main)
     
-        ball.physicsBody = SKPhysicsBody(circleOfRadius: <#T##CGFloat#>)
+        ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
         ball.physicsBody?.applyImpulse(CGVector(dx: 20, dy: 20))
+
         
-        
+        ball.physicsBody?.angularVelocity = self.physicsBody!.angularVelocity
+        let ballDirection = physicsBody?.angularVelocity
+        ball.physicsBody?.velocity = self.physicsBody!.velocity
+        ball.physicsBody?.applyForce(_:at :asImpulse: true)
+
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         
         border.friction = 0
@@ -70,18 +74,20 @@ class GameScene: SKScene {
     func addScore(playerWhoWon : SKShapeNode){
         if playerWhoWon == main {
             score[0] += 1
-            ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
         }
             
         else if playerWhoWon == enemy {
             score[1] += 1
-            ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
 }
         topLabel.text = "\(score [1])"
         bottomLabel.text = "\(score [0])"
+
+        
+    ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
+    ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
         
     }
-    
+
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        for touch in touches {
 //            let location = touch.location(in: self)
