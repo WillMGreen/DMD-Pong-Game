@@ -55,6 +55,9 @@ class GameScene: SKScene {
         let ballDirection = physicsBody?.angularVelocity
         ball.physicsBody?.velocity = self.physicsBody!.velocity
         ball.physicsBody?.applyForce(_:at :asImpulse: true)
+        ball.physicsBody?.affectedByGravity = false
+        ball.physicsBody?.isDynamic = true
+        
 
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
         
@@ -83,8 +86,8 @@ class GameScene: SKScene {
         bottomLabel.text = "\(score [0])"
 
         
-    ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
-    ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
+//    ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
+//    ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
         
     }
 
