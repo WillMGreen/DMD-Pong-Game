@@ -1,8 +1,14 @@
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
-    
+
+
+
+class GameScene: SKScene, SKPhysicsContactDelegate {
+
+    let ballCategory: UInt32 = 1;
+    let rectCategory: UInt32 = 2;
+    let frameCategory: UInt32 = 4;
     
     var ball: SKSpriteNode!
     var enemy: SKShapeNode!
@@ -11,24 +17,27 @@ class GameScene: SKScene {
     var topLabel: SKLabelNode!
     var bottomLabel: SKLabelNode!
     
-    var score = [Int]()
-    
+    var playerScore = 0
     
     override func didMove(to view: SKView) {
         
         
+        
+        backgroundColor = .black
         topLabel = SKLabelNode(text: "0")
         topLabel.position = CGPoint(x: size.width/2, y: size.height/2 + 100)
         addChild(topLabel)
-        
-        
+        physicsWorld.contactDelegate = self
         
         bottomLabel =  SKLabelNode(text: "0")
         bottomLabel.position = CGPoint(x: size.width/2, y: size.height/2 - 100)
         addChild(bottomLabel)
         
-        
-        ball = childNode(withName: "ball") as? SKSpriteNode
+
+        ball = SKSpriteNode(imageNamed: "Ball")
+        ball.name = "ball"
+        ball.position = CGPoint(x: size.width/2, y: size.height/2)
+        addChild(ball)
         
         let paddleSize = CGSize(width: 140, height: 10)
         
@@ -37,6 +46,8 @@ class GameScene: SKScene {
         enemy.fillColor = .red
         enemy.physicsBody = SKPhysicsBody(rectangleOf: enemy.frame.size)
         enemy.physicsBody?.isDynamic = false
+        enemy.physicsBody?.contactTestBitMask = rectCategory
+        enemy.name = "enemy"
         addChild(enemy)
         
         
@@ -45,51 +56,57 @@ class GameScene: SKScene {
         main.fillColor = .white
         main.physicsBody = SKPhysicsBody(rectangleOf: main.frame.size)
         main.physicsBody?.isDynamic = false
+        main.name = "player"
+        main.physicsBody!.contactTestBitMask = main.physicsBody!.collisionBitMask
+        main.physicsBody?.categoryBitMask = rectCategory
         addChild(main)
     
         ball.physicsBody = SKPhysicsBody(circleOfRadius: ball.size.width / 2.0)
         ball.physicsBody?.applyImpulse(CGVector(dx: 20, dy: 20))
-
-        
-        ball.physicsBody?.angularVelocity = self.physicsBody!.angularVelocity
-        let ballDirection = physicsBody?.angularVelocity
-        ball.physicsBody?.velocity = self.physicsBody!.velocity
-        ball.physicsBody?.applyForce(_:at :asImpulse: true)
+        ball.physicsBody?.linearDamping = 0
         ball.physicsBody?.affectedByGravity = false
-        ball.physicsBody?.isDynamic = true
+        ball.physicsBody?.restitution = 1
+        ball.physicsBody!.categoryBitMask = ballCategory
+        ball.physicsBody?.contactTestBitMask = rectCategory
         
+
 
         let border = SKPhysicsBody(edgeLoopFrom: self.frame)
-        
+        border.contactTestBitMask = 0
         border.friction = 0
         border.restitution = 1
-        
+        border.contactTestBitMask = 0
+        border.categoryBitMask = frameCategory
         self.physicsBody = border
         startGame()
     }
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        var ball: SKSpriteNode!
+        var paddle: SKShapeNode!
+        
+        
+        if contact.bodyA.node!.name == "ball" {
+            ball = contact.bodyA.node as? SKSpriteNode
+            paddle = contact.bodyB.node as? SKShapeNode
+        } else {
+            ball = contact.bodyB.node as? SKSpriteNode
+            paddle = contact.bodyA.node as? SKShapeNode
+        }
+        
+        if paddle.name == "player" {
+            playerScore += 1
+            bottomLabel.text = "\(playerScore)"
+        }
+    
+    }
+
+    
     func startGame() {
-        score = [0,0]
-        topLabel.text = "\(score [1]))"
-        bottomLabel.text = "\(score [0]))"
+        bottomLabel.text = "\(playerScore)"
     }
     
-    func addScore(playerWhoWon : SKShapeNode){
-        if playerWhoWon == main {
-            score[0] += 1
-        }
-            
-        else if playerWhoWon == enemy {
-            score[1] += 1
-}
-        topLabel.text = "\(score [1])"
-        bottomLabel.text = "\(score [0])"
 
-        
-//    ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
-//    ball.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 0))
-        
-    }
 
 //    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        for touch in touches {
@@ -113,12 +130,7 @@ class GameScene: SKScene {
             
     enemy.run(SKAction.moveTo(x: ball.position.x , duration: 1.0))
     
-            if ball.position.y <= main.position.y - 70 {
-                addScore(playerWhoWon: enemy)
+        
     }
-            else if ball.position.y <= enemy.position.y + 70 {
-                addScore(playerWhoWon: main )
-            }
-}
 }
 
