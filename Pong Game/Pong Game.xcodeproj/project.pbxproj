@@ -15,6 +15,8 @@
 		27462E09225383460028082E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27462E07225383460028082E /* Main.storyboard */; };
 		27462E0B225383460028082E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27462E0A225383460028082E /* Assets.xcassets */; };
 		27462E0E225383460028082E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27462E0C225383460028082E /* LaunchScreen.storyboard */; };
+		C0FB77232285B28B00F26EE0 /* displayScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB77222285B28B00F26EE0 /* displayScreenViewController.swift */; };
+		C0FB77252285B34F00F26EE0 /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FB77242285B34F00F26EE0 /* mapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		27462E0A225383460028082E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27462E0D225383460028082E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27462E0F225383460028082E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0FB77222285B28B00F26EE0 /* displayScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = displayScreenViewController.swift; sourceTree = "<group>"; };
+		C0FB77242285B34F00F26EE0 /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				07A35BAF227060F000CBB075 /* CustomAnnotation.swift */,
 				27462E05225383460028082E /* GameViewController.swift */,
 				27462E07225383460028082E /* Main.storyboard */,
+				C0FB77242285B34F00F26EE0 /* mapViewController.swift */,
+				C0FB77222285B28B00F26EE0 /* displayScreenViewController.swift */,
 				07A35BAC22705CAB00CBB075 /* gpx.gpx */,
 				27462E0A225383460028082E /* Assets.xcassets */,
 				27462E0C225383460028082E /* LaunchScreen.storyboard */,
@@ -151,6 +157,8 @@
 				27462E04225383460028082E /* GameScene.swift in Sources */,
 				07A35BB0227060F000CBB075 /* CustomAnnotation.swift in Sources */,
 				27462E06225383460028082E /* GameViewController.swift in Sources */,
+				C0FB77252285B34F00F26EE0 /* mapViewController.swift in Sources */,
+				C0FB77232285B28B00F26EE0 /* displayScreenViewController.swift in Sources */,
 				27462DFE225383460028082E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

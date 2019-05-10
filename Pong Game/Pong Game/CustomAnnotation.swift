@@ -1,3 +1,4 @@
+import UIKit
 import MapKit
 
 class CustomAnnotation: NSObject, MKAnnotation {

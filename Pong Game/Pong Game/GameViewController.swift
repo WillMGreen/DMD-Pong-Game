@@ -1,19 +1,16 @@
-//
-//  GameViewController.swift
-//  Pong Game
-//
-//  Created by William Green (s5066515) on 02/04/2019.
-//  Copyright © 2019 William Green (s5066515). All rights reserved.
-//
-
 import UIKit
 import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
+    
+    var annotation: CustomAnnotation!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(annotation.title)
+        
         
         if let view = self.view as! SKView? {
             
