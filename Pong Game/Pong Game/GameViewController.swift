@@ -9,14 +9,13 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(annotation.title)
+      //  print(annotation.title)
         
         
         if let view = self.view as! SKView? {
             
             let scene = GameScene(fileNamed: "GameScene")!
-        
-           
+    
            
                 scene.scaleMode = .aspectFill
                 
@@ -25,8 +24,8 @@ class GameViewController: UIViewController {
             
             view.ignoresSiblingOrder = true
             
-            view.showsFPS = true
-            view.showsNodeCount = true
+        view.showsFPS = true
+        view.showsNodeCount = true
         }
     }
 

@@ -1,0 +1,13 @@
+project 'Pong Game.xcodeproj'
+
+platform :ios, '10.0'
+
+target 'Pong Game' do
+
+  use_frameworks!
+
+    pod 'Firebase/Core'
+    pod 'Firebase/Firestore'
+
+
+end

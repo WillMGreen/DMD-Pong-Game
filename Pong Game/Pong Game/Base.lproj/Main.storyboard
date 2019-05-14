@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jql-Hd-Eib">
-    <device id="retina6_1" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -14,40 +14,60 @@
             <objects>
                 <viewController id="jql-Hd-Eib" customClass="displayScreenViewController" customModule="Pong_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qjH-XV-KYO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yj6-9D-JA9">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beach iphone 8" translatesAutoresizingMaskIntoConstraints="NO" id="RhO-1A-gBa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWP-zq-Hux">
+                                <rect key="frame" x="144" y="478" width="86" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Mapview"/>
                                 <connections>
-                                    <action selector="button:" destination="jql-Hd-Eib" eventType="touchUpInside" id="UPd-7E-4kD"/>
-                                    <segue destination="PqQ-oG-p60" kind="show" identifier="Next" id="eIP-ME-zjt"/>
+                                    <action selector="button:" destination="jql-Hd-Eib" eventType="touchUpInside" id="f9m-cz-jzs"/>
+                                    <segue destination="PqQ-oG-p60" kind="show" id="0Om-hn-SG2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Click &quot;Mapview' below and select a location the map to play the game. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t55-Qe-Lek">
+                                <rect key="frame" x="49" y="373" width="310" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to BU Pong Game! " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYL-Q0-Kge">
+                                <rect key="frame" x="5" y="120" width="370" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ht1-YD-uqb"/>
                     </view>
                     <connections>
-                        <segue destination="PqQ-oG-p60" kind="show" id="rJa-NR-Mja"/>
+                        <outlet property="imagebackdrop" destination="RhO-1A-gBa" id="XgE-s2-opR"/>
+                        <segue destination="PqQ-oG-p60" kind="show" identifier="Next" id="rJa-NR-Mja"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="umN-p6-cse" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1600" y="125"/>
+            <point key="canvasLocation" x="-1600.8" y="124.58770614692655"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="IzR-vB-ddz">
             <objects>
                 <viewController id="PqQ-oG-p60" customClass="mapViewController" customModule="Pong_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o5W-Ip-hhb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eSQ-5s-TsJ">
-                                <rect key="frame" x="0.0" y="44" width="414" height="834"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
                         </subviews>
@@ -61,25 +81,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2x-Eu-BuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-810.14492753623199" y="126.5625"/>
+            <point key="canvasLocation" x="-810.39999999999998" y="126.38680659670166"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="Pong_Game" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
+                    <connections>
+                        <outlet property="imagebackdrop" destination="RhO-1A-gBa" id="JD4-Vp-A4D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7" y="127"/>
+            <point key="canvasLocation" x="-8.8000000000000007" y="126.38680659670166"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="beach iphone 8" width="750" height="1334"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eIP-ME-zjt"/>
+        <segue reference="0Om-hn-SG2"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
 </document>

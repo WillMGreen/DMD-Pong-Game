@@ -4,11 +4,15 @@ class displayScreenViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         var annotation: CustomAnnotation!
         
     }
-    @IBAction func button(_ sender: Any) {
+    
+    @IBAction func button(_ sender: UIButton) {
     }
+    
+    @IBOutlet weak var imagebackdrop: UIImageView!
     
    
 
